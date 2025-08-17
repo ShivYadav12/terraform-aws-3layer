@@ -23,3 +23,17 @@ Additionally, a **GitHub Actions workflow** is included to automate `terraform f
 
 ## 📂 Project Structure
 
+terraform_3layer_aws/
+├── main.tf # Root module, calls submodules
+├── provider.tf # AWS provider + backend config
+├── variables.tf # Input variables
+├── outputs.tf # Output values
+├── .gitignore # Ignore tfstate, .terraform, etc.
+├── README.md # Project documentation
+├── modules/
+│ ├── network/ # VPC, subnets, NAT, IGW
+│ ├── app/ # ASG, Launch Template, Security Group
+│ └── db/ # RDS instance + subnet group
+└── .github/
+└── workflows/
+└── terraform.yml # GitHub Actions workflow
